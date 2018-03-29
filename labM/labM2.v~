@@ -1,0 +1,10 @@
+module labM;
+reg [31:0] wd;
+reg [4:0] rn1, rn2, wn;
+reg clk, w;
+
+wire [31:0] rd1, rd2;
+
+rf myRF(rd1, rd2, rn1, rn2, wn, wd, clk, w);
+
+

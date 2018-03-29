@@ -1,0 +1,54 @@
+         .globl      MAX
+         .globl      SIZE
+         #-----------------------------
+         .text
+         #-------------------------------
+         .data
+MAX:     .word        2147483647;
+SIZE:    .byte        32;
+count:   .word        0;
+          jr            $ra
+
+           .globl  getCount
+#-----------------------------------
+           .text
+#------------------------------------
+getCount:  lw           $v0, count($0)
+           jr           $ra
+#--------------------------------------
+
+           .globl    Count
+           .text
+#---------------------------------------------
+Count:     add          $t0, $0, $a0  #t0 = new count
+           lw           $v0, count($0)
+           sw           $t0, count($0)
+           jr           $ra
+#--------------------------------------
+
+           .globl  println
+           .text
+#-----------------------------------------
+ println:  addi       $v0, $0, 11
+           addi       $a0, $0, 10
+           syscall
+           jr         $ra
+
+
+           .globl   signum
+           .text
+#-----------------------------------------------
+signum:    add        $t0, $0, $a0   #t0 = value sent
+           slt        $t1, $t0, $0   #t1 = 1 if if value is <0 
+           beq        $t1, 1, j lessThan
+           beq        $t0, 0, j isZero  
+           add $a1, $0, 1
+           j Next
+lessThan:  add $a1, $0, -1
+           j Next
+isZero:    add $a1, $0, 0
+           j Next
+
+Next:      
+
+

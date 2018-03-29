@@ -1,0 +1,38 @@
+#! /cs/local/bin/vvp
+:ivl_version "0.9.6 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1762d80 .scope module, "labK" "labK" 2 1;
+ .timescale 0 0;
+L_0x17a7a30 .functor NOT 1, v0x17a7720_0, C4<0>, C4<0>, C4<0>;
+L_0x17a7ae0 .functor AND 1, v0x17a75d0_0, L_0x17a7a30, C4<1>, C4<1>;
+L_0x17a7bf0 .functor AND 1, v0x17a7670_0, v0x17a7720_0, C4<1>, C4<1>;
+L_0x17a7cd0 .functor OR 1, L_0x17a7ae0, L_0x17a7bf0, C4<0>, C4<0>;
+v0x1762480_0 .net "AandNotC", 0 0, L_0x17a7ae0; 1 drivers
+v0x17a7530_0 .net "BandC", 0 0, L_0x17a7bf0; 1 drivers
+v0x17a75d0_0 .var "a", 0 0;
+v0x17a7670_0 .var "b", 0 0;
+v0x17a7720_0 .var "c", 0 0;
+v0x17a77c0_0 .var "flag", 0 0;
+v0x17a78a0_0 .net "temp", 0 0, L_0x17a7a30; 1 drivers
+v0x17a7940_0 .net "z", 0 0, L_0x17a7cd0; 1 drivers
+    .scope S_0x1762d80;
+T_0 ;
+    %vpi_func 2 23 "$value$plusargs", 8, 32, "a=%b", v0x17a75d0_0;
+    %set/v v0x17a77c0_0, 8, 1;
+    %vpi_func 2 24 "$value$plusargs", 8, 32, "b=%b", v0x17a7670_0;
+    %set/v v0x17a77c0_0, 8, 1;
+    %vpi_func 2 25 "$value$plusargs", 8, 32, "c=%b", v0x17a7720_0;
+    %set/v v0x17a77c0_0, 8, 1;
+    %delay 1, 0;
+    %vpi_call 2 31 "$display", " a=%b b=%b c=%b z=%b", v0x17a75d0_0, v0x17a7670_0, v0x17a7720_0, v0x17a7940_0;
+    %vpi_call 2 35 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "labK7.v";

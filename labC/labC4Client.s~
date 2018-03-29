@@ -1,0 +1,34 @@
+           .text
+#           .data
+#space:     .asciiz "\n"
+main:      sw         $ra  0($sp)
+          addi       $sp, $sp, -4
+
+           lw         $a0, MAX($0)
+           addi       $v0, $0, 1
+           syscall
+#------------------------------------------
+           addi       $v0, $0, 11
+           addi       $a0, $0, 10
+           syscall
+ #          addi       $v0, $0, 4   #system #4, print string
+ #         la         $a0, space   #load address of the string
+ #        syscall
+#----------------------------------------------
+           lbu        $a0, SIZE($0)
+           addi       $v0, $0, 1
+           syscall
+#-----------------------------------------
+           addi       $v0, $0, 11
+           addi       $a0, $0, 10
+           syscall
+#--------------------------------------------------
+           jal        getCount
+           add        $a0, $0, $v0
+           addi       $v0, $0, 1
+           syscall
+#-----------------------------------------------
+           addi       $sp, $sp, 4
+           lw         $ra  0($sp)
+           jr         $ra
+

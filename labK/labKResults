@@ -1,0 +1,108 @@
+LABK1
+
+	input: no input.  A register was created and the register's value was changed during the 	        program.
+
+	output:
+
+	time =     0, x = 11111111111111110000000000000000
+	time =     0, x = 00000000000000000000000000000000
+	time =     0, x = 00000000000000000000000000000010
+	one = 0, two = 10, three = 010
+
+LABK2
+
+	input:  x = 5
+        Other registers were created and the registers' values were changed during the program.
+
+	output:
+
+	 0:  x=x y=x z=x
+	10:  x=5 y=x z=x
+	14:  x=6 y=x z=x
+	20:  x=6 y=7 z=x
+	21:  x=7 y=7 z=x
+	28:  x=8 y=7 z=x
+	30:  x=8 y=7 z=8
+
+LABK3
+
+	input: a = 1
+      	       b = 2
+
+	output:
+
+	a=1 b=1 z=0
+
+LABK4
+
+	input: No specified input.  For this program, exhaustive testing was done
+
+	output:
+
+	a=0 b=0 z=0
+	a=0 b=1 z=0
+	a=1 b=0 z=1
+	a=1 b=1 z=0
+
+LABK5
+
+	input: No specified input.  For this program, exhaustive testing was done
+
+	output:
+
+	PASS: a=0 b=0 z=0
+	PASS: a=0 b=1 z=0
+	PASS: a=1 b=0 z=1
+	PASS: a=1 b=1 z=0
+
+LABK6
+
+	input: a = 1
+   	       b = 0
+   	       c = 0
+
+	output:
+
+	a=1 b=0 c=0 z=1
+
+LABK7
+
+	input: a = 0
+       	       b = 0
+    	       c = 0
+
+	output:
+
+	 a=0 b=0 c=0 z=0
+
+LABK8
+
+	input: a = 1
+               b = 1
+               c = 1
+
+	output:
+
+	PASS:  a=0 b=0 c=0 z=0
+
+LABK9
+
+	input: no specific input.  Exhaustive testing was used in this program.
+
+	output:
+
+	PASS: a=0 b=0 Cin=0 Cout=0 z=0
+	PASS: a=0 b=0 Cin=1 Cout=0 z=1
+	PASS: a=0 b=1 Cin=0 Cout=0 z=1
+	PASS: a=0 b=1 Cin=1 Cout=1 z=0
+	PASS: a=1 b=0 Cin=0 Cout=0 z=1
+	PASS: a=1 b=0 Cin=1 Cout=1 z=0
+	PASS: a=1 b=1 Cin=0 Cout=1 z=0
+	PASS: a=1 b=1 Cin=1 Cout=1 z=1
+
+
+
+
+
+
+
